@@ -24,8 +24,8 @@ class Grafo:
         for i in range(self.vertices):
             print(str(i + 1) + " |" + str(self.grafo[i]))
 
-    def calcula_e_ordena_pesos(self):
-        v_peso = []
+    def calcula_e_ordena_graus(self):
+        v_grau = []
         v = 0
 
         #Calcula Graus
@@ -34,14 +34,14 @@ class Grafo:
             for j in i:
                 if(j == 1):
                     c = c + 1
-            v_peso.append([c,(v + 1)])
+            v_grau.append([c,(v + 1)])
             v = v + 1
 
         #Ordena vetor
-        v_peso = sorted(v_peso, key=lambda x: x[0], reverse=True)
+        v_grau = sorted(v_grau, key=lambda x: x[0], reverse=True)
 
         #retorno
-        return v_peso
+        return v_grau
         
     def coloracao(self):
         #variáveis
@@ -57,11 +57,11 @@ class Grafo:
             cores.append(copy.copy(var))
         
         #colorindo
-        pesos = self.calcula_e_ordena_pesos()
+        graus = self.calcula_e_ordena_graus()
 
         #vetor que percorre linha
         for i in range(0, self.vertices, 1):
-            v_atual = pesos[i][1]
+            v_atual = graus[i][1]
             atribui_cor.append([v_atual, cores[v_atual - 1][0]])
 
             #vetor que percorre coluna
