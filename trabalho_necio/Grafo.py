@@ -69,7 +69,7 @@ class Grafo:
                 x = self.grafo[v_atual - 1][j]
 
                 #Condicao: Se haver adjascencia, irá apagar a cor da adjascencia
-                if(x == 1):
+                if(x > 0):
                     cor_atual = cores[v_atual - 1][0]
 
                     for k in range(0, len(cores[j]), 1):
