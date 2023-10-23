@@ -1,7 +1,7 @@
 from Grafo import Grafo
 
 #Arquivo de entrada
-entrada = 'coloracao-teste'
+entrada = 'coloracao-inst7'
 
 #Ler dados
 vetor_entrada = []

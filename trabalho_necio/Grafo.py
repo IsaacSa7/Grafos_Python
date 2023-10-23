@@ -32,7 +32,7 @@ class Grafo:
         for i in self.grafo:       
             c = 0
             for j in i:
-                if(j == 1):
+                if(j >= 1):
                     c = c + 1
             v_grau.append([c,(v + 1)])
             v = v + 1
@@ -49,10 +49,11 @@ class Grafo:
         var = []
         atribui_cor = []
         
-        #distribuindo vetor de cores
+        #Criando vetor de ossibilidades
         for i in range(0, self.vertices, 1):
             var.append(i + 1)
         
+        #criando vetor de cores
         for i in range(0, self.vertices, 1):
             cores.append(copy.copy(var))
         
@@ -78,5 +79,3 @@ class Grafo:
                             break
         
         return atribui_cor
-
-
